@@ -35,7 +35,7 @@ for linha in pagina_clientes.iter_rows(min_row=2):
         sleep(5)
         pyautogui.hotkey('ctrl','w')
         sleep(6)
-    except:
+    except: #Caso o numero seja invalido, cria um arquivo em CSV e passa o nome e telefone em que não foi possivel entrar em contatt
         print(f'Não foi possível enviar mensagem para {nome} {telefone}')
         with open('erros.csv','a',newline='',encoding='utf-8') as arquivo:
             arquivo.write(f'{nome},{telefone}{os.linesep}')
